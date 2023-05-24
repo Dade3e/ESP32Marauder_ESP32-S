@@ -3,17 +3,21 @@
   #define configs_h
 
   #define POLISH_POTATO
+
+  //Indicates that it must redirect the stream with the captured packets to serial (1)
+  //If not defined, will write packages to SD card if supported
+  #define WRITE_PACKETS_SERIAL
   
   //#define MARAUDER_MINI
   //#define MARAUDER_V4
   //#define MARAUDER_V6
   //#define MARAUDER_KIT
-  //#define GENERIC_ESP32
-  #define MARAUDER_FLIPPER
+  #define GENERIC_ESP32
+  //#define MARAUDER_FLIPPER
   //#define ESP32_LDDB
   //#define MARAUDER_DEV_BOARD_PRO
 
-  #define MARAUDER_VERSION "v0.10.1"
+  #define MARAUDER_VERSION "v0.10.4"
 
   //// BUTTON DEFINITIONS
   #ifdef MARAUDER_MINI
@@ -362,6 +366,10 @@
 
   #ifdef MARAUDER_DEV_BOARD_PRO
     #define SD_CS 4
+  #endif
+
+  #ifdef GENERIC_ESP32
+    #define SD_CS 5
   #endif
   //// END SD DEFINITIONS
 
